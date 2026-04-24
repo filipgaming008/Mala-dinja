@@ -1,0 +1,4 @@
+ipykernel
+openeo
+requests
+requests-oauthlib
