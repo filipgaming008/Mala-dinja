@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mala Dinja Dev Cache Review</title>
+	<link
+		rel="stylesheet"
+		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+		crossorigin=""
+	/>
+	<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+	<div class="layout">
+		<aside class="sidebar">
+			<h1>Dev Cache Review</h1>
+			<p class="muted">Isolated frontend for development only.</p>
+
+			<label for="indicator">Indicator</label>
+			<select id="indicator"></select>
+
+			<div class="row">
+				<div>
+					<label for="min">Min</label>
+					<input id="min" type="number" step="0.001" />
+				</div>
+				<div>
+					<label for="max">Max</label>
+					<input id="max" type="number" step="0.001" />
+				</div>
+			</div>
+
+			<label for="search">Search</label>
+			<input id="search" type="text" placeholder="file, date, mode..." />
+
+			<label for="mode">Mode</label>
+			<select id="mode"></select>
+
+			<label for="method">Method</label>
+			<select id="method"></select>
+
+			<label for="resolution">Resolution</label>
+			<select id="resolution"></select>
+
+			<p id="count" class="meta"></p>
+			<div id="list" class="list"></div>
+		</aside>
+
+		<main class="main">
+			<div class="card">
+				<h2 id="title">No cache selected</h2>
+				<p id="details" class="meta"></p>
+			</div>
+			<div id="map"></div>
+		</main>
+	</div>
+
+	<script
+		src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+		crossorigin=""
+	></script>
+	<script src="/app.js"></script>
+</body>
+</html>

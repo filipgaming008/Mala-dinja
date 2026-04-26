@@ -2,3 +2,9 @@ ipykernel
 openeo
 requests
 requests-oauthlib
+fastapi
+uvicorn
+sentinelhub
+numpy
+matplotlib
+rasterio
