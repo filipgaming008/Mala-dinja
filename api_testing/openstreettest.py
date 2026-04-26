@@ -124,6 +124,7 @@ def factories_in_polygon2(polygon_string):
 
 overpass_url = "https://overpass.kumi.systems/api/interpreter"
 
+overpass_url_2 = "https://overpass-api.de/api/interpreter"
 
 def river_query(country_bbox=MACEDONIA_BBOX, river_name='Струма'):
     return f"""
@@ -132,17 +133,49 @@ def river_query(country_bbox=MACEDONIA_BBOX, river_name='Струма'):
     The original search was:
     “waterway=river and name=Vardar and type:way”
     */
-    [out:json][timeout:300][bbox:{MACEDONIA_BBOX}];
+    [out:json][timeout:60][bbox:{MACEDONIA_BBOX}];
     // gather results
     way["waterway"="river"]["name"="{river_name}"];
     // print results
     out geom;"""
 
+headers = {
+    'User-Agent': 'KupperPollutionTracker/1.0 (your-email@example.com)',
+    'Accept-Charset': 'utf-8',
+    'Accept': 'application/json'
+}
+
+success=False
+retry_delay = 5
+for attempt in range(3):
+    try:
+
+        response = requests.post(overpass_url_2, data={'data': river_query(river_name='Вардар')},headers=headers, timeout=310)
+
+        # If the server says "429 Too Many Requests" or "504 Timeout"
+        if response.status_code != 200:
+            print(f"Server returned status {response.status_code}. Retrying in {retry_delay}s...")
+            time.sleep(retry_delay)
+            retry_delay *= 2  # Wait longer each time (5s, 10s, 20s)
+            continue
+
+        data = response.json()
+        success = True
+        break  # Exit the retry loop
+
+    except (requests.exceptions.RequestException, json.JSONDecodeError) as e:
+        print(f"Connection error: {e}. Retrying...")
+        time.sleep(retry_delay)
+        retry_delay *= 2
+
+if not success:
+    print(f"!! Failed to freach rivers after 3 attempts. Skipping.")
 
 
-response = requests.post(overpass_url, data={'data': river_query()})
 
+#response = requests.post(overpass_url, data={'data': river_query()})
 
+print(response.text)
 data = response.json()
 
 abbr_points=[]
@@ -200,7 +233,7 @@ for box in optimized_boxes:
     for attempt in range(max_retries):
         try:
             print(f"Checking Box {k} (Attempt {attempt + 1})...")
-            response_industry = requests.post(overpass_url, data={'data': query}, timeout=310)
+            response_industry = requests.post(overpass_url_2, data={'data': query},headers=headers, timeout=310)
 
             # If the server says "429 Too Many Requests" or "504 Timeout"
             if response_industry.status_code != 200:
@@ -326,7 +359,7 @@ for box in optimized_boxes:
 with open("river_industrial_data.json", "w", encoding="utf-8") as f:
     json.dump(all_results, f, indent=4, ensure_ascii=False)
 
-render_map(all_results, "pollution_map.html")
+#render_map(all_results, "pollution_map.html")
 
 # with open("river_industrial_data_cr.json", "w", encoding="utf-8") as f:
 #     json.dump(all_results, f, indent=4, ensure_ascii=False)
