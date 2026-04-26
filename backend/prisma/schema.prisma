@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum WaterBodyType {
+  RIVER
+  LAKE
+  RESERVOIR
+  COASTAL
+  UNKNOWN
+}
+
+enum EnvironmentalSourceType {
+  FACTORY
+  FARM
+  CONSTRUCTION
+  WASTEWATER
+  INDUSTRIAL_BUILDING
+  UNKNOWN
+}
+
+enum AnalysisStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+}
+
+enum RiskLevel {
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+enum AiProvider {
+  OPENAI
+  MOCK
+}
+
+model WaterBody {
+  id          String        @id @default(cuid())
+  name        String
+  type        WaterBodyType @default(UNKNOWN)
+  countryCode String?
+  osmId       String?
+  bbox        Json?
+  metadata    Json?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  analyses WaterAnalysis[]
+
+  @@index([osmId])
+}
+
+model EnvironmentalSource {
+  id             String                  @id @default(cuid())
+  osmId          String?
+  osmType        String?
+  name           String?
+  sourceType     EnvironmentalSourceType @default(UNKNOWN)
+  countryCode    String?
+  latitude       Float?
+  longitude      Float?
+  distanceMeters Float?
+  osmTags        Json?                   @map("tags")
+  rawData        Json?
+  createdAt      DateTime                @default(now())
+  updatedAt      DateTime                @updatedAt
+
+  analysisSources WaterAnalysisSource[]
+
+  @@unique([osmId, osmType])
+  @@index([osmId])
+  @@index([osmType])
+}
+
+model WaterAnalysis {
+  id             String         @id @default(cuid())
+  waterBodyId    String
+  status         AnalysisStatus @default(PENDING)
+  radiusKm       Float
+  requestPayload Json
+  resultData     Json?
+  errorData      Json?
+  startedAt      DateTime?
+  completedAt    DateTime?
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  waterBody       WaterBody             @relation(fields: [waterBodyId], references: [id])
+  analysisSources WaterAnalysisSource[]
+  riskReports     RiskReport[]
+  aiAnalysisLogs  AiAnalysisLog[]
+
+  @@index([waterBodyId])
+}
+
+model WaterAnalysisSource {
+  id             String   @id @default(cuid())
+  analysisId     String
+  sourceId       String
+  distanceMeters Float?
+  metadata       Json?
+  createdAt      DateTime @default(now())
+
+  analysis WaterAnalysis       @relation(fields: [analysisId], references: [id])
+  source   EnvironmentalSource @relation(fields: [sourceId], references: [id])
+
+  @@unique([analysisId, sourceId])
+  @@index([analysisId])
+  @@index([sourceId])
+}
+
+model RiskReport {
+  id              String    @id @default(cuid())
+  analysisId      String
+  riskLevel       RiskLevel @default(LOW)
+  summary         String?
+  riskFactors     Json?
+  recommendations Json?
+  rawData         Json?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  analysis WaterAnalysis @relation(fields: [analysisId], references: [id])
+
+  @@index([analysisId])
+}
+
+model AiAnalysisLog {
+  id           String     @id @default(cuid())
+  analysisId   String
+  provider     AiProvider @default(MOCK)
+  modelName    String?
+  promptData   Json?
+  responseData Json?
+  usageData    Json?
+  createdAt    DateTime   @default(now())
+
+  analysis WaterAnalysis @relation(fields: [analysisId], references: [id])
+
+  @@index([analysisId])
+}
