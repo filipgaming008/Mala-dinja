@@ -1,5 +1,7 @@
 import type { Prisma } from "@prisma/client";
 import { prisma } from "../../shared/prisma/prismaClient.js";
+import type { AiFullReport } from "../../shared/ai/ai.types.js";
+import type { RiskScoringResult } from "../risk-analysis/riskScoring.types.js";
 import type { AnalysisContextRecord, DeterministicReportDraft, RiskReportRecord } from "./riskReports.types.js";
 
 const analysisInclude = {
@@ -40,7 +42,14 @@ const findAnalysisContext = async (analysisId: string): Promise<AnalysisContextR
   return (row as AnalysisContextRecord | null) ?? null;
 };
 
-const createRiskReport = async (analysisId: string, draft: DeterministicReportDraft): Promise<RiskReportRecord> => {
+const createRiskReport = async (
+  analysisId: string,
+  draft: DeterministicReportDraft,
+  aiContext?: {
+    fullReport: AiFullReport;
+    deterministicRiskScore: RiskScoringResult;
+  },
+): Promise<RiskReportRecord> => {
   const row = await prisma.riskReport.create({
     data: {
       analysisId,
@@ -58,7 +67,9 @@ const createRiskReport = async (analysisId: string, draft: DeterministicReportDr
       recommendations: draft.recommendations as unknown as Prisma.InputJsonValue,
       rawData: {
         potentialSources: draft.potentialSources,
-        strategy: "deterministic_template_v1",
+        strategy: "deterministic_plus_ai_full_report_v1",
+        aiFullReport: aiContext?.fullReport,
+        deterministicRiskScore: aiContext?.deterministicRiskScore,
       } as Prisma.InputJsonValue,
     },
     include: riskReportInclude,

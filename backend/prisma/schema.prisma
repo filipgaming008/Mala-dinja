@@ -43,6 +43,11 @@ enum AiProvider {
   MOCK
 }
 
+enum AiAnalysisStatus {
+  COMPLETED
+  FAILED
+}
+
 model WaterBody {
   id          String        @id @default(cuid())
   name        String
@@ -135,14 +140,16 @@ model RiskReport {
 }
 
 model AiAnalysisLog {
-  id           String     @id @default(cuid())
-  analysisId   String
-  provider     AiProvider @default(MOCK)
-  modelName    String?
-  promptData   Json?
-  responseData Json?
-  usageData    Json?
-  createdAt    DateTime   @default(now())
+  id            String           @id @default(cuid())
+  analysisId    String
+  provider      AiProvider       @default(MOCK)
+  model         String
+  promptVersion String
+  inputJson     Json
+  outputJson    Json?
+  status        AiAnalysisStatus
+  errorMessage  String?
+  createdAt     DateTime         @default(now())
 
   analysis WaterAnalysis @relation(fields: [analysisId], references: [id])
 

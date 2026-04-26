@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>River Pollution Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: sans-serif; background: #1a1a2e; color: #eee; }
+
+    #map { width: 100vw; height: 100vh; }
+
+    /* Legend */
+    .legend {
+      background: rgba(20,20,35,0.92);
+      border: 1px solid #333;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #ddd;
+      min-width: 160px;
+    }
+    .legend h4 {
+      margin-bottom: 8px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #aaa;
+    }
+    .legend-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .legend-row:hover { opacity: 0.75; }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .legend-count {
+      margin-left: auto;
+      font-size: 11px;
+      color: #888;
+    }
+    .legend-sep {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 8px 0;
+    }
+    .legend-filter-hint {
+      font-size: 10px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Popup overrides */
+    .leaflet-popup-content-wrapper {
+      background: #1e2030;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #ddd;
+      font-family: sans-serif;
+      box-shadow: 0 4px 20px rgba(0,0,0,.5);
+    }
+    .leaflet-popup-tip { background: #1e2030; }
+    .leaflet-popup-content { margin: 12px 16px; font-size: 13px; }
+
+    .popup-name {
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .popup-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 3px 0;
+      border-bottom: 1px solid #2a2d40;
+      color: #999;
+      font-size: 12px;
+    }
+    .popup-row span:last-child { color: #ddd; text-align: right; }
+    .popup-pollutants {
+      margin-top: 8px;
+      padding: 6px 8px;
+      background: rgba(255,255,255,.04);
+      border-radius: 4px;
+      font-size: 11px;
+      color: #aaa;
+      line-height: 1.6;
+    }
+    .popup-pollutants b {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: #666;
+      margin-bottom: 3px;
+    }
+    .popup-satellite {
+      margin-top: 6px;
+      padding: 6px 8px;
+      background: rgba(58,143,196,.1);
+      border: 1px solid rgba(58,143,196,.25);
+      border-radius: 4px;
+      font-size: 11px;
+      color: #7ab8d8;
+      line-height: 1.5;
+    }
+    .popup-satellite b {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+// ── MAP INIT ──────────────────────────────────────────────────────────────────
+const map = L.map('map', {
+  center: [41.6, 21.7],
+  zoom: 8,
+  zoomControl: true,
+});
+
+// Dark OSM tiles (CartoDB)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors © <a href="https://carto.com/">CARTO</a>',
+  maxZoom: 19,
+}).addTo(map);
+
+// ── CONFIG ────────────────────────────────────────────────────────────────────
+const COLORS = {
+  'very-high': '#e85d4a',
+  'high':      '#e8903a',
+  'medium':    '#d4b84a',
+  'low':       '#4ac46e',
+};
+
+const LABELS = {
+  'very-high': 'Very High',
+  'high':      'High',
+  'medium':    'Medium',
+  'low':       'Low',
+};
+
+const RADIUS = {
+  'very-high': 13,
+  'high':      9,
+  'medium':    7,
+  'low':       5,
+};
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+const layerGroups = {};
+const stats = { 'very-high': 0, 'high': 0, 'medium': 0, 'low': 0 };
+const activeFilters = new Set(['very-high', 'high', 'medium', 'low']);
+
+Object.keys(COLORS).forEach(r => {
+  layerGroups[r] = L.layerGroup().addTo(map);
+});
+
+// ── LOAD DATA ─────────────────────────────────────────────────────────────────
+fetch('river_industrial_data.json')
+  .then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  })
+  .then(data => {
+    const seen = new Set();
+
+    data.forEach(square => {
+      (square.sites || []).forEach(site => {
+        const key = `${site.lat},${site.lon}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+
+        const risk  = site.risk || 'medium';
+        const color = COLORS[risk];
+
+        stats[risk] = (stats[risk] || 0) + 1;
+
+        const marker = L.circleMarker([site.lat, site.lon], {
+          radius:      RADIUS[risk],
+          color:       color,
+          fillColor:   color,
+          fillOpacity: 0.85,
+          weight:      1.5,
+        });
+
+        const pollutantList = (site.pollutants || [])
+          .map(p => `• ${p}`)
+          .join('<br>');
+
+        const areaStr = site.area_m2 > 0
+          ? `${site.area_m2.toLocaleString()} m²`
+          : 'Unknown';
+
+        marker.bindPopup(`
+          <div class="popup-name">${site.name}</div>
+          <div class="popup-row"><span>Industry</span><span>${site.industry_label || '—'}</span></div>
+          <div class="popup-row">
+            <span>Risk</span>
+            <span style="color:${color};font-weight:bold">${LABELS[risk]}</span>
+          </div>
+          <div class="popup-row"><span>Category</span><span>${site.category || '—'}</span></div>
+          <div class="popup-row"><span>Area</span><span>${areaStr}</span></div>
+          <div class="popup-row"><span>OSM ID</span><span>${site.osm_id}</span></div>
+          <div class="popup-pollutants">
+            <b>Key Pollutants</b>
+            ${pollutantList || 'Unknown'}
+          </div>
+          <div class="popup-satellite">
+            <b>🛰 Satellite-Observable</b>
+            ${site.satellite_signature || 'No data'}
+          </div>
+        `, { maxWidth: 320 });
+
+        marker.addTo(layerGroups[risk]);
+      });
+    });
+
+    buildLegend();
+  })
+  .catch(err => {
+    console.error('Failed to load JSON:', err);
+    alert(`Could not load river_industrial_data.json\n\n${err.message}\n\nMake sure the file is in the same folder and you're serving via a local server (not file://)`);
+  });
+
+// ── LEGEND ────────────────────────────────────────────────────────────────────
+function buildLegend() {
+  const legend = L.control({ position: 'bottomleft' });
+
+  legend.onAdd = () => {
+    const div = L.DomUtil.create('div', 'legend');
+    L.DomEvent.disableClickPropagation(div);
+
+    div.innerHTML = `<h4>Pollution Risk</h4>`;
+
+    Object.entries(LABELS).forEach(([risk, label]) => {
+      const row = document.createElement('div');
+      row.className = 'legend-row';
+      row.dataset.risk = risk;
+      row.innerHTML = `
+        <div class="legend-dot" style="background:${COLORS[risk]}"></div>
+        <span>${label}</span>
+        <span class="legend-count">${stats[risk] || 0}</span>
+      `;
+      row.addEventListener('click', () => toggleLayer(risk, row));
+      div.appendChild(row);
+    });
+
+    div.innerHTML += `<hr class="legend-sep"><div class="legend-filter-hint">Click to toggle layers</div>`;
+    return div;
+  };
+
+  legend.addTo(map);
+}
+
+function toggleLayer(risk, row) {
+  if (activeFilters.has(risk)) {
+    map.removeLayer(layerGroups[risk]);
+    activeFilters.delete(risk);
+    row.style.opacity = '0.35';
+  } else {
+    layerGroups[risk].addTo(map);
+    activeFilters.add(risk);
+    row.style.opacity = '1';
+  }
+}
+</script>
+
+</body>
+</html>

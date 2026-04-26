@@ -5,7 +5,7 @@ import { v1Router } from "../../src/routes/v1.js";
 import { errorHandler, notFoundHandler } from "../../src/shared/errors/errorHandler.js";
 
 const runPythonJsonMock = vi.hoisted(() => vi.fn());
-const generateRiskNarrativeMock = vi.hoisted(() => vi.fn());
+const generateFullReportMock = vi.hoisted(() => vi.fn());
 
 type Db = {
   waterBodies: Array<{
@@ -295,7 +295,7 @@ const mockedDb = vi.hoisted(() => {
 
 vi.mock("../../src/shared/prisma/prismaClient.js", () => ({ prisma: mockedDb.prisma }));
 vi.mock("../../src/shared/python/pythonRunner.js", () => ({ runPythonJson: runPythonJsonMock }));
-vi.mock("../../src/shared/ai/aiClient.js", () => ({ generateRiskNarrative: generateRiskNarrativeMock }));
+vi.mock("../../src/shared/ai/aiClient.js", () => ({ generateFullReport: generateFullReportMock }));
 
 const buildIntegrationApp = () => {
   const app = express();
@@ -310,11 +310,17 @@ describe("MVP backend integration flow", () => {
   beforeEach(() => {
     mockedDb.reset();
     runPythonJsonMock.mockReset();
-    generateRiskNarrativeMock.mockReset();
-    generateRiskNarrativeMock.mockResolvedValue({
-      summary: "Risk correlation may indicate stress patterns potentially associated with nearby sources; field verification required.",
-      riskExplanation: "Explanation reflects provided deterministic risk score factors only.",
-      possibleDrivers: ["Potential contributing sources near shoreline"],
+    generateFullReportMock.mockReset();
+    generateFullReportMock.mockResolvedValue({
+      executiveSummary: "Risk correlation may indicate stress patterns potentially associated with nearby sources; field verification required.",
+      riskOverview: {
+        score: 59,
+        level: "MEDIUM",
+        confidenceScore: 0.74,
+        explanation: "Explanation reflects provided deterministic risk score factors only.",
+      },
+      detectedSignals: ["turbidityScore: 0.80"],
+      potentialEnvironmentalPressureSources: ["Industrial Site"],
       longTermImpact: {
         oneYear: "One-year impact may indicate localized variability.",
         fiveYears: "Five-year trend may indicate recurring stress if unchanged.",
@@ -322,9 +328,9 @@ describe("MVP backend integration flow", () => {
         fiftyYears: "Fifty-year horizon requires scenario-based interpretation.",
       },
       recommendedActions: ["Run targeted field sampling before operational conclusions."],
-      verificationSteps: ["Sample upstream/downstream locations."],
-      mitigationIdeas: ["Improve runoff controls near possible environmental pressure sources."],
-      confidenceExplanation: "Confidence is derived from provided deterministic score and data completeness.",
+      verificationPlan: ["Sample upstream/downstream locations."],
+      mitigationPlan: ["Improve runoff controls near possible environmental pressure sources."],
+      businessOpportunities: ["Deliver monitoring and risk-reduction support services."],
       disclaimer: "This report is decision-support only and requires field verification.",
     });
   });
@@ -382,7 +388,7 @@ describe("MVP backend integration flow", () => {
     expect(generateReportResponse.status).toBe(201);
     expect(mockedDb.db.riskReports.length).toBe(1);
     expect(generateReportResponse.body.data.disclaimer.toLowerCase()).toContain("field verification");
-    expect(generateReportResponse.body.data.summary.toLowerCase()).not.toContain("guilty");
+    expect(generateReportResponse.body.data.executiveSummary.toLowerCase()).not.toContain("guilty");
   });
 
   it("fails validation for invalid radiusKm", async () => {

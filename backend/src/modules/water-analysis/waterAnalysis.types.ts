@@ -1,4 +1,5 @@
 import type { AnalysisStatus, EnvironmentalSourceType, WaterBodyType } from "@prisma/client";
+import type { RiskScoringResult } from "../risk-analysis/riskScoring.types.js";
 
 export type WaterAnalysisBbox = {
   south: number;
@@ -24,6 +25,9 @@ export type PotentialSourceInput = {
   osmType?: string;
   name?: string;
   sourceType?: string;
+  riskLevel?: "LOW" | "MEDIUM" | "HIGH" | "VERY_HIGH";
+  pollutants?: string[];
+  satelliteSignature?: string;
   latitude?: number;
   longitude?: number;
   distanceMeters?: number;
@@ -59,6 +63,9 @@ export type WaterAnalysisResult = {
     countryCode: string | null;
   };
   potentialSources: PotentialSource[];
+  detectedIndicators: Record<string, JsonValue>;
+  riskScore: RiskScoringResult | null;
+  disclaimer: string;
   raw: Record<string, JsonValue>;
 };
 

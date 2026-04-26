@@ -43,6 +43,11 @@ Tracks what has been scaffolded, implemented, validated, and deferred.
 - AI integration now receives deterministic risk-scoring output and explains only provided score/factors (no hidden AI scoring)
 - AI output schema expanded with `riskExplanation`, `recommendedActions`, `verificationSteps`, `mitigationIdeas`, and `confidenceExplanation`
 - added canonical reusable AI template prompt for deterministic risk explanation in `src/shared/ai/aiPrompts.ts`
+- refactored AI integration into provider-agnostic structure (`aiClient`, `aiPrompts`, `aiSchemas`, `ai.types`, `providers/openai.provider`, `providers/mock.provider`)
+- added AI architecture context doc in `docs/context/ai-risk-analysis.md`
+- upgraded AI prompt file with versioned prompts: `RISK_ANALYSIS_PROMPT_V1`, `SOURCE_MITIGATION_PROMPT_V1`, `FULL_REPORT_PROMPT_V1`
+- upgraded AI schema contracts with `AiRiskAnalysisSchema`, `AiSourceMitigationSchema`, and `AiFullReportSchema`
+- added `AiPromptVersion` helper type and structured input types in `src/shared/ai/ai.types.ts`
 
 ## validated
 
