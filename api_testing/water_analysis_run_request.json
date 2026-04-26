@@ -1,0 +1,12 @@
+{
+  "waterBodyName": "Вардар",
+  "waterBodyType": "RIVER",
+  "countryCode": "MK",
+  "radiusKm": 5,
+  "bbox": {
+    "south": 41.914196,
+    "west": 21.131498,
+    "north": 42.076481,
+    "east": 21.630906
+  }
+}

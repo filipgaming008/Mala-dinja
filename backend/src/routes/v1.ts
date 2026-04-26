@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { env } from "../config/env.js";
+import { devRouter } from "../modules/dev/dev.routes.js";
 import { environmentalSourcesRouter } from "../modules/environmental-sources/environmentalSources.routes.js";
 import { riskReportsRouter } from "../modules/risk-reports/riskReports.routes.js";
 import { waterBodiesRouter } from "../modules/water-bodies/waterBodies.routes.js";
@@ -21,3 +23,7 @@ v1Router.use("/environmental-sources", environmentalSourcesRouter);
 v1Router.use("/risk-reports", riskReportsRouter);
 v1Router.use("/water-bodies", waterBodiesRouter);
 v1Router.use("/water-analysis", waterAnalysisRouter);
+
+if (env.NODE_ENV !== "production") {
+  v1Router.use("/dev", devRouter);
+}

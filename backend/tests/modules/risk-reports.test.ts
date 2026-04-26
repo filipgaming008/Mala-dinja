@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { v1Router } from "../../src/routes/v1.js";
 import { errorHandler, notFoundHandler } from "../../src/shared/errors/errorHandler.js";
 
-const generateRiskNarrativeMock = vi.hoisted(() => vi.fn());
+const generateFullReportMock = vi.hoisted(() => vi.fn());
 
 type AnalysisRecord = {
   id: string;
@@ -24,6 +24,7 @@ type RiskReportRecord = {
   summary: string | null;
   riskFactors: Record<string, unknown>;
   recommendations: string[];
+  rawData: Record<string, unknown>;
   createdAt: Date;
   updatedAt: Date;
   analysis: AnalysisRecord;
@@ -52,6 +53,7 @@ const mockedDb = vi.hoisted(() => {
           summary: (data.summary as string | undefined) ?? null,
           riskFactors: (data.riskFactors as Record<string, unknown> | undefined) ?? {},
           recommendations: (data.recommendations as string[] | undefined) ?? [],
+          rawData: (data.rawData as Record<string, unknown> | undefined) ?? {},
           createdAt: now,
           updatedAt: now,
           analysis,
@@ -91,7 +93,7 @@ const mockedDb = vi.hoisted(() => {
 });
 
 vi.mock("../../src/shared/prisma/prismaClient.js", () => ({ prisma: mockedDb.prisma }));
-vi.mock("../../src/shared/ai/aiClient.js", () => ({ generateRiskNarrative: generateRiskNarrativeMock }));
+vi.mock("../../src/shared/ai/aiClient.js", () => ({ generateFullReport: generateFullReportMock }));
 
 const buildTestApp = () => {
   const app = express();
@@ -105,11 +107,17 @@ const buildTestApp = () => {
 describe("risk-reports module", () => {
   beforeEach(() => {
     mockedDb.reset();
-    generateRiskNarrativeMock.mockReset();
-    generateRiskNarrativeMock.mockResolvedValue({
-      summary: "AI narrative summary with potential contributing sources and field verification required.",
-      riskExplanation: "Risk explanation tied to provided deterministic score and factors.",
-      possibleDrivers: ["Potential contributing sources near the water body"],
+    generateFullReportMock.mockReset();
+    generateFullReportMock.mockResolvedValue({
+      executiveSummary: "AI executive summary with potential contributing sources and field verification required.",
+      riskOverview: {
+        score: 61,
+        level: "HIGH",
+        confidenceScore: 0.72,
+        explanation: "Risk explanation tied to provided deterministic score and factors.",
+      },
+      detectedSignals: ["turbidityScore: 0.80"],
+      potentialEnvironmentalPressureSources: ["Factory A", "Farm B"],
       longTermImpact: {
         oneYear: "One-year scenario note.",
         fiveYears: "Five-year scenario note.",
@@ -117,9 +125,9 @@ describe("risk-reports module", () => {
         fiftyYears: "Fifty-year scenario note.",
       },
       recommendedActions: ["Run targeted field sampling."],
-      verificationSteps: ["Collect field samples near observed anomalies."],
-      mitigationIdeas: ["Plan preventive runoff control measures."],
-      confidenceExplanation: "Confidence reflects provided deterministic confidence and data coverage.",
+      verificationPlan: ["Collect field samples near observed anomalies."],
+      mitigationPlan: ["Plan preventive runoff control measures."],
+      businessOpportunities: ["Offer compliance-friendly monitoring services."],
       disclaimer: "Field verification required.",
     });
   });
@@ -134,7 +142,15 @@ describe("risk-reports module", () => {
     expect(response.body.success).toBe(true);
     expect(response.body.data.analysisId).toBe("c00000000000000000000010");
     expect(response.body.data.disclaimer).toContain("Field verification required");
-    expect(response.body.data.summary.toLowerCase()).not.toContain("guilty");
+    expect(response.body.data.executiveSummary.toLowerCase()).not.toContain("guilty");
+    expect(generateFullReportMock).toHaveBeenCalledTimes(1);
+    expect(generateFullReportMock.mock.calls[0]?.[0]).toMatchObject({
+      analysisId: "c00000000000000000000010",
+      score: expect.any(Number),
+      level: expect.any(String),
+      confidenceScore: expect.any(Number),
+      riskExplanation: expect.any(String),
+    });
   });
 
   it("gets risk report by id", async () => {
@@ -143,12 +159,12 @@ describe("risk-reports module", () => {
       .post("/api/v1/risk-reports/generate")
       .send({ analysisId: "c00000000000000000000010" });
 
-    const reportId = createResponse.body.data.reportId as string;
+    const reportId = createResponse.body.data.id as string;
     const getResponse = await request(app).get(`/api/v1/risk-reports/${reportId}`);
 
     expect(getResponse.status).toBe(200);
     expect(getResponse.body.success).toBe(true);
-    expect(getResponse.body.data.reportId).toBe(reportId);
+    expect(getResponse.body.data.id).toBe(reportId);
   });
 
   it("returns 404 when analysis does not exist", async () => {

@@ -19,21 +19,29 @@ export type PotentialSourceSnapshot = {
 };
 
 export type RiskReportResult = {
-  reportId: string;
+  id: string;
   analysisId: string;
-  riskLevel: RiskLevel;
-  summary: string;
-  riskExplanation: string;
-  longTermImpact: LongTermImpact;
-  recommendations: string[];
-  verificationSteps: string[];
-  mitigationIdeas: string[];
-  confidenceScore: number;
-  confidenceExplanation: string;
+  executiveSummary: string;
+  riskOverview: {
+    score: number;
+    level: RiskLevel;
+    confidenceScore: number;
+    explanation: string;
+  };
+  detectedSignals: string[];
+  potentialEnvironmentalPressureSources: string[];
+  longTermImpact: {
+    oneYear: string;
+    fiveYears: string;
+    tenYears: string;
+    fiftyYears: string;
+  };
+  recommendedActions: string[];
+  verificationPlan: string[];
+  mitigationPlan: string[];
+  businessOpportunities: string[];
   disclaimer: string;
-  potentialSources: PotentialSourceSnapshot[];
   createdAt: string;
-  updatedAt: string;
 };
 
 export type AnalysisContextRecord = {
@@ -63,6 +71,7 @@ export type RiskReportRecord = {
   summary: string | null;
   riskFactors: unknown;
   recommendations: unknown;
+  rawData: unknown;
   createdAt: Date;
   updatedAt: Date;
   analysis: AnalysisContextRecord;

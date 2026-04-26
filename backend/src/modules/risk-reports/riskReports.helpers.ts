@@ -124,6 +124,9 @@ const isRecord = (value: unknown): value is Record<string, unknown> => {
 
 export const toRiskReportResult = (record: RiskReportRecord): RiskReportResult => {
   const riskFactors = isRecord(record.riskFactors) ? record.riskFactors : {};
+  const rawData = isRecord(record.rawData) ? record.rawData : {};
+  const aiFullReport = isRecord(rawData.aiFullReport) ? rawData.aiFullReport : {};
+  const deterministicRiskScore = isRecord(rawData.deterministicRiskScore) ? rawData.deterministicRiskScore : {};
   const longTermImpact = isRecord(riskFactors.longTermImpact)
     ? (riskFactors.longTermImpact as LongTermImpact)
     : {
@@ -161,23 +164,74 @@ export const toRiskReportResult = (record: RiskReportRecord): RiskReportResult =
     ? riskFactors.mitigationIdeas.filter((item): item is string => typeof item === "string")
     : [];
 
-  const potentialSources = toPotentialSources(record.analysis);
+  const aiRiskOverview = isRecord(aiFullReport.riskOverview) ? aiFullReport.riskOverview : {};
+
+  const score =
+    typeof aiRiskOverview.score === "number"
+      ? aiRiskOverview.score
+      : typeof deterministicRiskScore.score === "number"
+        ? deterministicRiskScore.score
+        : 0;
+
+  const detectedSignals = Array.isArray(aiFullReport.detectedSignals)
+    ? aiFullReport.detectedSignals.filter((item): item is string => typeof item === "string")
+    : [];
+
+  const potentialEnvironmentalPressureSources = Array.isArray(aiFullReport.potentialEnvironmentalPressureSources)
+    ? aiFullReport.potentialEnvironmentalPressureSources.filter((item): item is string => typeof item === "string")
+    : toPotentialSources(record.analysis).map((source) => source.name ?? `${source.sourceType} source`);
+
+  const aiLongTermImpact = isRecord(aiFullReport.longTermImpact)
+    ? aiFullReport.longTermImpact
+    : {};
+
+  const recommendedActions = Array.isArray(aiFullReport.recommendedActions)
+    ? aiFullReport.recommendedActions.filter((item): item is string => typeof item === "string")
+    : recommendations;
+
+  const verificationPlan = Array.isArray(aiFullReport.verificationPlan)
+    ? aiFullReport.verificationPlan.filter((item): item is string => typeof item === "string")
+    : verificationSteps;
+
+  const mitigationPlan = Array.isArray(aiFullReport.mitigationPlan)
+    ? aiFullReport.mitigationPlan.filter((item): item is string => typeof item === "string")
+    : mitigationIdeas;
+
+  const businessOpportunities = Array.isArray(aiFullReport.businessOpportunities)
+    ? aiFullReport.businessOpportunities.filter((item): item is string => typeof item === "string")
+    : [];
 
   return {
-    reportId: record.id,
+    id: record.id,
     analysisId: record.analysisId,
-    riskLevel: record.riskLevel,
-    summary: record.summary ?? "Risk report generated. Field verification required.",
-    riskExplanation,
-    longTermImpact,
-    recommendations,
-    verificationSteps,
-    mitigationIdeas,
-    confidenceScore,
-    confidenceExplanation,
+    executiveSummary:
+      typeof aiFullReport.executiveSummary === "string"
+        ? aiFullReport.executiveSummary
+        : (record.summary ?? "Risk report generated. Field verification required."),
+    riskOverview: {
+      score,
+      level: record.riskLevel,
+      confidenceScore,
+      explanation:
+        typeof aiRiskOverview.explanation === "string" ? aiRiskOverview.explanation : riskExplanation,
+    },
+    detectedSignals,
+    potentialEnvironmentalPressureSources,
+    longTermImpact: {
+      oneYear:
+        typeof aiLongTermImpact.oneYear === "string" ? aiLongTermImpact.oneYear : longTermImpact.year1,
+      fiveYears:
+        typeof aiLongTermImpact.fiveYears === "string" ? aiLongTermImpact.fiveYears : longTermImpact.year5,
+      tenYears:
+        typeof aiLongTermImpact.tenYears === "string" ? aiLongTermImpact.tenYears : longTermImpact.year10,
+      fiftyYears:
+        typeof aiLongTermImpact.fiftyYears === "string" ? aiLongTermImpact.fiftyYears : longTermImpact.year50,
+    },
+    recommendedActions,
+    verificationPlan,
+    mitigationPlan,
+    businessOpportunities,
     disclaimer,
-    potentialSources,
     createdAt: record.createdAt.toISOString(),
-    updatedAt: record.updatedAt.toISOString(),
   };
 };

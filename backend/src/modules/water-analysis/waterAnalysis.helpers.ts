@@ -1,5 +1,6 @@
 import { EnvironmentalSourceType } from "@prisma/client";
 import { AppError } from "../../shared/errors/AppError.js";
+import type { RiskScoringResult } from "../risk-analysis/riskScoring.types.js";
 import type {
   JsonValue,
   PotentialSource,
@@ -118,6 +119,18 @@ export const toPotentialSource = (record: WaterAnalysisRecord["analysisSources"]
 };
 
 export const toWaterAnalysisResult = (record: WaterAnalysisRecord): WaterAnalysisResult => {
+  const raw = toJsonRecord(record.resultData) ?? {};
+  const detectedIndicators =
+    typeof raw.detectedIndicators === "object" && raw.detectedIndicators !== null && !Array.isArray(raw.detectedIndicators)
+      ? (raw.detectedIndicators as Record<string, JsonValue>)
+      : {};
+
+  const riskScoreCandidate = raw.deterministicRiskScore;
+  const riskScore =
+    typeof riskScoreCandidate === "object" && riskScoreCandidate !== null && !Array.isArray(riskScoreCandidate)
+      ? (riskScoreCandidate as unknown as RiskScoringResult)
+      : null;
+
   return {
     analysisId: record.id,
     status: record.status,
@@ -128,6 +141,9 @@ export const toWaterAnalysisResult = (record: WaterAnalysisRecord): WaterAnalysi
       countryCode: record.waterBody.countryCode,
     },
     potentialSources: record.analysisSources.map((join) => toPotentialSource(join.source)),
-    raw: toJsonRecord(record.resultData) ?? {},
+    detectedIndicators,
+    riskScore,
+    disclaimer: "This analysis is decision-support only. It does not assign legal responsibility and requires field verification.",
+    raw,
   };
 };

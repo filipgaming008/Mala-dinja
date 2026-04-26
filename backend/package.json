@@ -21,6 +21,7 @@
     "express": "^4.19.2",
     "express-rate-limit": "^7.4.1",
     "helmet": "^8.0.0",
+    "openai": "^6.34.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

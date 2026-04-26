@@ -1,7 +1,6 @@
 import { AppError } from "../../shared/errors/AppError.js";
-import { env } from "../../config/env.js";
 import { calculateRiskScore } from "../risk-analysis/riskScoring.service.js";
-import { generateRiskNarrative } from "../../shared/ai/aiClient.js";
+import { generateFullReport } from "../../shared/ai/aiClient.js";
 import { buildDeterministicReport, toRiskReportResult } from "./riskReports.helpers.js";
 import { riskReportsRepository } from "./riskReports.repository.js";
 import type { GenerateRiskReportInput, RiskReportResult } from "./riskReports.types.js";
@@ -21,12 +20,18 @@ const extractDetectedIndicators = (resultData: unknown): Record<string, unknown>
   return {};
 };
 
-const generateRiskReport = async (input: GenerateRiskReportInput): Promise<RiskReportResult> => {
-  const analysis = await riskReportsRepository.findAnalysisContext(input.analysisId);
+const toDetectedSignals = (detectedIndicators: Record<string, unknown>): string[] => {
+  return Object.entries(detectedIndicators)
+    .filter(([, value]) => typeof value === "number" && Number.isFinite(value as number))
+    .map(([key, value]) => `${key}: ${Number(value).toFixed(2)}`);
+};
+
+const generate = async (analysisId: string): Promise<RiskReportResult> => {
+  const analysis = await riskReportsRepository.findAnalysisContext(analysisId);
 
   if (!analysis) {
     throw new AppError(404, "WATER_ANALYSIS_NOT_FOUND", "Water analysis not found", {
-      analysisId: input.analysisId,
+      analysisId,
     });
   }
 
@@ -54,47 +59,65 @@ const generateRiskReport = async (input: GenerateRiskReportInput): Promise<RiskR
     radiusKm: analysis.radiusKm,
   });
 
-  const narrative = await generateRiskNarrative({
+  const deterministicExplanation = `Deterministic backend score is ${riskScore.score} (${riskScore.level}) with confidence ${riskScore.confidenceScore}. The explanation reflects risk correlation from provided indicators and potential environmental pressure sources only; field verification required.`;
+
+  const fullReport = await generateFullReport({
     analysisId: analysis.id,
-    waterBody: analysis.waterBody,
-    analysisMetrics: typeof analysis.resultData === "object" && analysis.resultData !== null ? (analysis.resultData as Record<string, unknown>) : {},
-    potentialSources: draft.potentialSources.map((source) => ({
-      sourceType: source.sourceType,
-      name: source.name,
-      distanceMeters: source.distanceMeters,
-      riskLevel: draft.riskLevel,
-    })),
-    detectedIndicators,
-    riskScore,
-    analysisMetadata: {
-      analysisId: analysis.id,
-      generatedAt: new Date().toISOString(),
-      providerMode: env.AI_PROVIDER,
+    score: riskScore.score,
+    level: riskScore.level,
+    confidenceScore: riskScore.confidenceScore,
+    riskExplanation: deterministicExplanation,
+    detectedSignals: toDetectedSignals(detectedIndicators),
+    potentialEnvironmentalPressureSources: draft.potentialSources.map(
+      (source) => source.name ?? `${source.sourceType} source`,
+    ),
+    longTermImpactContext: {
+      oneYear: draft.longTermImpact.year1,
+      fiveYears: draft.longTermImpact.year5,
+      tenYears: draft.longTermImpact.year10,
+      fiftyYears: draft.longTermImpact.year50,
     },
-    radiusKm: analysis.radiusKm,
+    recommendationsContext: draft.recommendations,
+    verificationContext: [
+      "Collect upstream and downstream field samples.",
+      "Compare field observations with satellite-observable signals.",
+    ],
+    mitigationContext: [
+      "Prioritize source-agnostic runoff and discharge control reviews.",
+      "Increase monitoring cadence near potential environmental pressure sources.",
+    ],
   });
 
   const mergedDraft = {
     ...draft,
-    summary: narrative.summary,
+    summary: fullReport.executiveSummary,
+    riskLevel: riskScore.level,
     longTermImpact: {
-      year1: narrative.longTermImpact.oneYear,
-      year5: narrative.longTermImpact.fiveYears,
-      year10: narrative.longTermImpact.tenYears,
-      year50: narrative.longTermImpact.fiftyYears,
+      year1: fullReport.longTermImpact.oneYear,
+      year5: fullReport.longTermImpact.fiveYears,
+      year10: fullReport.longTermImpact.tenYears,
+      year50: fullReport.longTermImpact.fiftyYears,
     },
-    recommendations: narrative.recommendedActions,
+    recommendations: fullReport.recommendedActions,
     confidenceScore: riskScore.confidenceScore,
-    disclaimer: narrative.disclaimer,
-    riskExplanation: narrative.riskExplanation,
-    confidenceExplanation: narrative.confidenceExplanation,
-    verificationSteps: narrative.verificationSteps,
-    mitigationIdeas: narrative.mitigationIdeas,
+    disclaimer: fullReport.disclaimer,
+    riskExplanation: deterministicExplanation,
+    confidenceExplanation:
+      "Confidence is deterministic and based on input completeness and factor coverage. Field verification required.",
+    verificationSteps: fullReport.verificationPlan,
+    mitigationIdeas: fullReport.mitigationPlan,
   };
 
-  const created = await riskReportsRepository.createRiskReport(input.analysisId, mergedDraft);
+  const created = await riskReportsRepository.createRiskReport(analysis.id, mergedDraft, {
+    fullReport,
+    deterministicRiskScore: riskScore,
+  });
 
   return toRiskReportResult(created);
+};
+
+const generateRiskReport = async (input: GenerateRiskReportInput): Promise<RiskReportResult> => {
+  return generate(input.analysisId);
 };
 
 const getRiskReportById = async (reportId: string): Promise<RiskReportResult> => {
@@ -108,6 +131,7 @@ const getRiskReportById = async (reportId: string): Promise<RiskReportResult> =>
 };
 
 export const riskReportsService = {
+  generate,
   generateRiskReport,
   getRiskReportById,
 };
