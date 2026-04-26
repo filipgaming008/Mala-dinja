@@ -522,7 +522,7 @@ def render_map(enriched_data: list, output_path: str = "pollution_map.html"):
 # ──────────────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    input_path = Path("river_industrial_data_cr.json")
+    input_path = Path("river_industrial_data.json")
     if not input_path.exists():
         print(f"ERROR: {input_path} not found. Run openstreettest.py first.")
         raise SystemExit(1)
