@@ -1,3 +1,7 @@
 [Vv]env/
 .idea/
+
 client.txt
+
+models/__pycache__/
+models/mago_fusion_cache/
