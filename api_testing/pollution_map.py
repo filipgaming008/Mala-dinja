@@ -318,6 +318,7 @@ def enrich_site(site: dict) -> dict:
         site.get("name", ""),
         site.get("type", ""),
         site.get("specifics", ""),  # already enriched above
+        site.get("category",""),
         osm_tags.get("industrial", ""),
         osm_tags.get("product", ""),
         osm_tags.get("craft", ""),

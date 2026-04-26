@@ -1,0 +1,2413 @@
+[
+    {
+        "square_id": 0,
+        "bounds": {
+            "min_lat": 41.3063,
+            "min_lon": 22.2973,
+            "max_lat": 41.3514,
+            "max_lon": 22.5676
+        },
+        "sites": [
+            {
+                "name": "Suntov",
+                "category": "Industry",
+                "type": "yes",
+                "specifics": "Unknown",
+                "lat": 41.315276,
+                "lon": 22.564839,
+                "area_m2": 1884.73,
+                "osm_id": 155835938,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 1,
+        "bounds": {
+            "min_lat": 41.5315,
+            "min_lon": 21.8468,
+            "max_lat": 41.5766,
+            "max_lon": 22.2072
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.540309,
+                "lon": 22.089925,
+                "area_m2": 0,
+                "osm_id": 10974159026,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.540547,
+                "lon": 22.089731,
+                "area_m2": 14892.4,
+                "osm_id": 1181802716,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 2,
+        "bounds": {
+            "min_lat": 41.3964,
+            "min_lon": 22.0721,
+            "max_lat": 41.4414,
+            "max_lon": 22.4324
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.438491,
+                "lon": 22.179409,
+                "area_m2": 153172.17,
+                "osm_id": 334644190,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 3,
+        "bounds": {
+            "min_lat": 42.027,
+            "min_lon": 20.991,
+            "max_lat": 42.0721,
+            "max_lon": 21.5315
+        },
+        "sites": [
+            {
+                "name": "ELITTE SOFA",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "furniture | Italian Style Leather Sofa",
+                "lat": 42.036638,
+                "lon": 21.400392,
+                "area_m2": 0,
+                "osm_id": 10821843864,
+                "industry_label": "Textile / Garment",
+                "risk": "high",
+                "pollutants": [
+                    "Synthetic dyes (azo, reactive)",
+                    "Cr",
+                    "Cd",
+                    "Pb",
+                    "High BOD/COD",
+                    "Surfactants",
+                    "Alkaline pH (10–11)",
+                    "NaCl"
+                ],
+                "satellite_signature": "Coloured water plumes visible in RGB satellite imagery (blue, brown, red tones depending on dye batch). Downstream foam accumulation in river eddies. Seasonal signal — stronger discharge during wet-processing runs. Reduced NDVI in riparian vegetation near outfall."
+            },
+            {
+                "name": "Tudnik za travertin",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.037409,
+                "lon": 21.305249,
+                "area_m2": 20818.75,
+                "osm_id": 134283066,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Rudnik za travertin",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.042626,
+                "lon": 21.291306,
+                "area_m2": 19083.53,
+                "osm_id": 134283068,
+                "industry_label": "Mining",
+                "risk": "very-high",
+                "pollutants": [
+                    "Cd",
+                    "Pb",
+                    "Zn",
+                    "As",
+                    "Sulphates",
+                    "Acid drainage"
+                ],
+                "satellite_signature": "Orange/yellow AMD staining on riverbed. High turbidity plume detectable in Sentinel-2 B2 (blue) band. Tailings pond visible as grey polygons with sharp boundaries on Google Earth."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.042493,
+                "lon": 21.324871,
+                "area_m2": 26852.44,
+                "osm_id": 161479491,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Бањани",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.076149,
+                "lon": 21.387598,
+                "area_m2": 544623.21,
+                "osm_id": 182886292,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.038493,
+                "lon": 21.301822,
+                "area_m2": 26993.92,
+                "osm_id": 230816557,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.053842,
+                "lon": 21.34235,
+                "area_m2": 22759.47,
+                "osm_id": 230833236,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.057036,
+                "lon": 21.342829,
+                "area_m2": 133695.94,
+                "osm_id": 230833255,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.056726,
+                "lon": 21.347142,
+                "area_m2": 4681.48,
+                "osm_id": 230833264,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "TNT",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.039649,
+                "lon": 21.389333,
+                "area_m2": 6892.35,
+                "osm_id": 365739806,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "VBI group Bus leasing",
+                "category": "Industry",
+                "type": "yes",
+                "specifics": "Unknown",
+                "lat": 42.056429,
+                "lon": 21.378385,
+                "area_m2": 513.96,
+                "osm_id": 407013894,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Simpeks",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.050723,
+                "lon": 21.383263,
+                "area_m2": 492.3,
+                "osm_id": 407013899,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Ceramica Imola",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.05451,
+                "lon": 21.378997,
+                "area_m2": 1268.75,
+                "osm_id": 407013902,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Fico Servis",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.048362,
+                "lon": 21.383836,
+                "area_m2": 435.84,
+                "osm_id": 409327206,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "B-MAX",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.046574,
+                "lon": 21.387548,
+                "area_m2": 1405.69,
+                "osm_id": 450123343,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "B.B.F. Company",
+                "category": "Industry",
+                "type": "yes",
+                "specifics": "Unknown",
+                "lat": 42.053871,
+                "lon": 21.379539,
+                "area_m2": 2451.58,
+                "osm_id": 450123344,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Inter FantasY",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.045968,
+                "lon": 21.385668,
+                "area_m2": 1309.28,
+                "osm_id": 450123345,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "RamStore",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.042711,
+                "lon": 21.39065,
+                "area_m2": 1701.86,
+                "osm_id": 450123346,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "RamStore",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.042172,
+                "lon": 21.390752,
+                "area_m2": 3165.83,
+                "osm_id": 450123347,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "RamStore",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.041985,
+                "lon": 21.390038,
+                "area_m2": 935.2,
+                "osm_id": 450123348,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Teknoxgroup CAT- Ул. 20 бр.32",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.04758,
+                "lon": 21.387102,
+                "area_m2": 512.91,
+                "osm_id": 450123349,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Medicus help",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.041657,
+                "lon": 21.390757,
+                "area_m2": 906.28,
+                "osm_id": 450123351,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Fokus",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.04291,
+                "lon": 21.38837,
+                "area_m2": 1196.76,
+                "osm_id": 450123355,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Te Lindi Keramika",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.046794,
+                "lon": 21.38477,
+                "area_m2": 547.11,
+                "osm_id": 450123359,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Elkotehna",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.041268,
+                "lon": 21.390991,
+                "area_m2": 1159.86,
+                "osm_id": 453048239,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Бал комерц",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "Unknown",
+                "lat": 42.030284,
+                "lon": 21.397968,
+                "area_m2": 5477.87,
+                "osm_id": 477147801,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.063692,
+                "lon": 21.343204,
+                "area_m2": 1499.28,
+                "osm_id": 788144344,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Sanda",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.030965,
+                "lon": 21.406341,
+                "area_m2": 282.07,
+                "osm_id": 844765482,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Tekstil Solution",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.03046,
+                "lon": 21.345893,
+                "area_m2": 483.77,
+                "osm_id": 1005959247,
+                "industry_label": "Textile / Garment",
+                "risk": "high",
+                "pollutants": [
+                    "Synthetic dyes (azo, reactive)",
+                    "Cr",
+                    "Cd",
+                    "Pb",
+                    "High BOD/COD",
+                    "Surfactants",
+                    "Alkaline pH (10–11)",
+                    "NaCl"
+                ],
+                "satellite_signature": "Coloured water plumes visible in RGB satellite imagery (blue, brown, red tones depending on dye batch). Downstream foam accumulation in river eddies. Seasonal signal — stronger discharge during wet-processing runs. Reduced NDVI in riparian vegetation near outfall."
+            },
+            {
+                "name": "ELITTE SOFA",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "furniture | factory | Furniture factory",
+                "lat": 42.036622,
+                "lon": 21.400335,
+                "area_m2": 1906.37,
+                "osm_id": 1163603794,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Merian As",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.046514,
+                "lon": 21.354333,
+                "area_m2": 1272.43,
+                "osm_id": 1244859556,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Mono Zero",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.050716,
+                "lon": 21.355314,
+                "area_m2": 527.22,
+                "osm_id": 1244860507,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Azur",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.03571,
+                "lon": 21.348199,
+                "area_m2": 731.72,
+                "osm_id": 1244862337,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Everest",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.040966,
+                "lon": 21.388271,
+                "area_m2": 739.96,
+                "osm_id": 1382984190,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Combo",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.04394,
+                "lon": 21.388538,
+                "area_m2": 4725.29,
+                "osm_id": 1382984191,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Dali Pension",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "Unknown",
+                "lat": 42.037086,
+                "lon": 21.040039,
+                "area_m2": 182.9,
+                "osm_id": 1382985971,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Automotive Service Dacia",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.033426,
+                "lon": 21.396257,
+                "area_m2": 2336.68,
+                "osm_id": 1384565286,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 4,
+        "bounds": {
+            "min_lat": 41.982,
+            "min_lon": 20.9459,
+            "max_lat": 42.027,
+            "max_lon": 21.6216
+        },
+        "sites": [
+            {
+                "name": "SHINE by Nurana",
+                "category": "Industry",
+                "type": "site",
+                "specifics": "Evening_Dresses;Cocktail_Dresses;Party_Dresses;Prom_Dresses;bridals;Fustana;Rrobaqepese | Nurana Ahmedi Muaremi",
+                "lat": 42.010869,
+                "lon": 20.96658,
+                "area_m2": 0,
+                "osm_id": 6404016618,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Славија",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.995079,
+                "lon": 21.474258,
+                "area_m2": 9410.39,
+                "osm_id": 37977772,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Комуна",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.993543,
+                "lon": 21.493438,
+                "area_m2": 11151.56,
+                "osm_id": 37996986,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Novomak",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.991876,
+                "lon": 21.49581,
+                "area_m2": 7903.89,
+                "osm_id": 38253966,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "ArcelorMittal CRM",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.006542,
+                "lon": 21.470726,
+                "area_m2": 117194.65,
+                "osm_id": 129833319,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "ArcelorMittal HRM",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.009469,
+                "lon": 21.470701,
+                "area_m2": 130586.07,
+                "osm_id": 129833336,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Eurosolid",
+                "category": "Industry",
+                "type": "house",
+                "specifics": "Unknown",
+                "lat": 42.012111,
+                "lon": 21.459768,
+                "area_m2": 211.62,
+                "osm_id": 175499669,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Хидроелектрана Пена",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "EVN",
+                "lat": 42.021123,
+                "lon": 20.950558,
+                "area_m2": 392.27,
+                "osm_id": 240259337,
+                "industry_label": "Hydroelectric",
+                "risk": "low",
+                "pollutants": [
+                    "Thermal pollution",
+                    "Sediment trapping",
+                    "Flow regime disruption"
+                ],
+                "satellite_signature": "Sediment delta accumulation behind dam visible in multitemporal Sentinel-2. Turbidity difference upstream/downstream detectable in B2/B3 bands. No chemical spectral signature."
+            },
+            {
+                "name": "Deni International",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "Unknown",
+                "lat": 41.993942,
+                "lon": 21.543738,
+                "area_m2": 35679.21,
+                "osm_id": 386292370,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Grand Foods Corporation",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.98508,
+                "lon": 21.588274,
+                "area_m2": 4686.41,
+                "osm_id": 389881383,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "пламтекс",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.983883,
+                "lon": 21.587543,
+                "area_m2": 1092.71,
+                "osm_id": 389881388,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Беорол",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.982734,
+                "lon": 21.589323,
+                "area_m2": 743.2,
+                "osm_id": 447905343,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.021065,
+                "lon": 21.366066,
+                "area_m2": 18453.8,
+                "osm_id": 453085780,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.985811,
+                "lon": 21.019008,
+                "area_m2": 13101.57,
+                "osm_id": 454823754,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Еко Циркон",
+                "category": "Unknown",
+                "type": "site",
+                "specifics": "Unknown",
+                "lat": 41.990974,
+                "lon": 21.49013,
+                "area_m2": 14289.79,
+                "osm_id": 533545798,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Тетекс",
+                "category": "Industry",
+                "type": "yes",
+                "specifics": "Unknown",
+                "lat": 41.996146,
+                "lon": 20.970452,
+                "area_m2": 60580.43,
+                "osm_id": 560535266,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Kalatex",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.000706,
+                "lon": 21.374565,
+                "area_m2": 1653.6,
+                "osm_id": 977826470,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Вардариште",
+                "category": "Unknown",
+                "type": "site",
+                "specifics": "Unknown",
+                "lat": 41.989589,
+                "lon": 21.48886,
+                "area_m2": 8360.84,
+                "osm_id": 1464176654,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 5,
+        "bounds": {
+            "min_lat": 41.9369,
+            "min_lon": 20.9009,
+            "max_lat": 41.982,
+            "max_lon": 21.6667
+        },
+        "sites": [
+            {
+                "name": "Технометал",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "Unknown",
+                "lat": 41.979276,
+                "lon": 21.458803,
+                "area_m2": 0,
+                "osm_id": 547985726,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Прототип",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "factory",
+                "lat": 41.97143,
+                "lon": 21.446072,
+                "area_m2": 4433.83,
+                "osm_id": 120978440,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Soloprom Fantasy",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "factory",
+                "lat": 41.971289,
+                "lon": 21.446749,
+                "area_m2": 5564.87,
+                "osm_id": 120978936,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "VPTEX Macedonia",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.979506,
+                "lon": 21.590187,
+                "area_m2": 2283.29,
+                "osm_id": 155686276,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.946899,
+                "lon": 21.37641,
+                "area_m2": 73832.18,
+                "osm_id": 230134571,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Madem",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Old Quarry",
+                "lat": 41.959246,
+                "lon": 21.430979,
+                "area_m2": 10474.86,
+                "osm_id": 231448641,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "АТОМ",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.977372,
+                "lon": 21.475809,
+                "area_m2": 3665.2,
+                "osm_id": 284468240,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Tempur",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.980425,
+                "lon": 21.59223,
+                "area_m2": 2096.6,
+                "osm_id": 406840627,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "ЈЦС Монмар",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.980941,
+                "lon": 21.591448,
+                "area_m2": 1427.63,
+                "osm_id": 406840628,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Белина Дооел",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.979375,
+                "lon": 21.591101,
+                "area_m2": 1737.93,
+                "osm_id": 433111695,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.978977,
+                "lon": 21.028997,
+                "area_m2": 48201.17,
+                "osm_id": 454827701,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Ресторан Мадера",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.979527,
+                "lon": 21.592401,
+                "area_m2": 229.67,
+                "osm_id": 491653969,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.954016,
+                "lon": 21.015993,
+                "area_m2": 38313.46,
+                "osm_id": 1328865784,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Makprimat",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.971638,
+                "lon": 21.448353,
+                "area_m2": 8895.89,
+                "osm_id": 1454909782,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.971162,
+                "lon": 21.104155,
+                "area_m2": 118903.03,
+                "osm_id": 1479870226,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 6,
+        "bounds": {
+            "min_lat": 41.3514,
+            "min_lon": 22.1171,
+            "max_lat": 41.3964,
+            "max_lon": 22.5225
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.388012,
+                "lon": 22.330181,
+                "area_m2": 174081.71,
+                "osm_id": 423680133,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "XE Дошница",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "EVN",
+                "lat": 41.369977,
+                "lon": 22.223416,
+                "area_m2": 453.15,
+                "osm_id": 909636476,
+                "industry_label": "Hydroelectric",
+                "risk": "low",
+                "pollutants": [
+                    "Thermal pollution",
+                    "Sediment trapping",
+                    "Flow regime disruption"
+                ],
+                "satellite_signature": "Sediment delta accumulation behind dam visible in multitemporal Sentinel-2. Turbidity difference upstream/downstream detectable in B2/B3 bands. No chemical spectral signature."
+            }
+        ]
+    },
+    {
+        "square_id": 7,
+        "bounds": {
+            "min_lat": 41.8018,
+            "min_lon": 20.7658,
+            "max_lat": 41.8468,
+            "max_lon": 21.036
+        },
+        "sites": [
+            {
+                "name": "Еуро Гранит",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "Unknown",
+                "lat": 41.82299,
+                "lon": 20.918047,
+                "area_m2": 0,
+                "osm_id": 4418253490,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 10,
+        "bounds": {
+            "min_lat": 41.7568,
+            "min_lon": 20.7658,
+            "max_lat": 41.8018,
+            "max_lon": 21.036
+        },
+        "sites": [
+            {
+                "name": "ХЕЦ Вруток",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "ECM",
+                "lat": 41.770891,
+                "lon": 20.837551,
+                "area_m2": 0,
+                "osm_id": 8445865628,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Blokara-Gostivar",
+                "category": "Industry",
+                "type": "works",
+                "specifics": "beton",
+                "lat": 41.793955,
+                "lon": 20.887376,
+                "area_m2": 0,
+                "osm_id": 13288756327,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "ХЕ Равен",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "ECM",
+                "lat": 41.779278,
+                "lon": 20.855091,
+                "area_m2": 986.6,
+                "osm_id": 612664884,
+                "industry_label": "Hydroelectric",
+                "risk": "low",
+                "pollutants": [
+                    "Thermal pollution",
+                    "Sediment trapping",
+                    "Flow regime disruption"
+                ],
+                "satellite_signature": "Sediment delta accumulation behind dam visible in multitemporal Sentinel-2. Turbidity difference upstream/downstream detectable in B2/B3 bands. No chemical spectral signature."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.755114,
+                "lon": 20.847205,
+                "area_m2": 87542.33,
+                "osm_id": 1328632425,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.761498,
+                "lon": 20.851809,
+                "area_m2": 35741.43,
+                "osm_id": 1328868680,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.767372,
+                "lon": 20.859451,
+                "area_m2": 141539.23,
+                "osm_id": 1328869044,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.774365,
+                "lon": 20.862956,
+                "area_m2": 13105.65,
+                "osm_id": 1328869454,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 12,
+        "bounds": {
+            "min_lat": 41.6667,
+            "min_lon": 21.6667,
+            "max_lat": 41.7117,
+            "max_lon": 21.982
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.69871,
+                "lon": 21.764842,
+                "area_m2": 113352.91,
+                "osm_id": 436364050,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.699939,
+                "lon": 21.758412,
+                "area_m2": 11871.03,
+                "osm_id": 436364052,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.703068,
+                "lon": 21.753156,
+                "area_m2": 110244.08,
+                "osm_id": 442738745,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.690368,
+                "lon": 21.745111,
+                "area_m2": 4815.0,
+                "osm_id": 449714192,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 13,
+        "bounds": {
+            "min_lat": 41.0811,
+            "min_lon": 22.4775,
+            "max_lat": 41.1261,
+            "max_lon": 22.6126
+        },
+        "sites": [
+            {
+                "name": "Μηχανοστάσιο Ειδομένης",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Οργανισμός Σιδηροδρόμων Ελλάδος",
+                "lat": 41.122691,
+                "lon": 22.5193,
+                "area_m2": 297.81,
+                "osm_id": 220293701,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 15,
+        "bounds": {
+            "min_lat": 42.1171,
+            "min_lon": 21.0811,
+            "max_lat": 42.1622,
+            "max_lon": 21.3063
+        },
+        "sites": [
+            {
+                "name": "Sharrcem",
+                "category": "Mining",
+                "type": "adit",
+                "specifics": "Unknown",
+                "lat": 42.151198,
+                "lon": 21.295987,
+                "area_m2": 0,
+                "osm_id": 8856214528,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Sharrcem",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 42.145811,
+                "lon": 21.300458,
+                "area_m2": 8155.21,
+                "osm_id": 396993907,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.148696,
+                "lon": 21.303237,
+                "area_m2": 204251.0,
+                "osm_id": 448823708,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.121008,
+                "lon": 21.302831,
+                "area_m2": 34589.45,
+                "osm_id": 460983105,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.127587,
+                "lon": 21.292377,
+                "area_m2": 184383.12,
+                "osm_id": 460983106,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.157279,
+                "lon": 21.203102,
+                "area_m2": 6013.55,
+                "osm_id": 467628454,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.124026,
+                "lon": 21.30015,
+                "area_m2": 17050.69,
+                "osm_id": 474426695,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.130122,
+                "lon": 21.304204,
+                "area_m2": 29291.88,
+                "osm_id": 547487677,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.154508,
+                "lon": 21.145174,
+                "area_m2": 24872.61,
+                "osm_id": 1340581926,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.148982,
+                "lon": 21.14287,
+                "area_m2": 92383.0,
+                "osm_id": 1340581929,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.152853,
+                "lon": 21.150377,
+                "area_m2": 43568.89,
+                "osm_id": 1340581938,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.145875,
+                "lon": 21.132239,
+                "area_m2": 24699.27,
+                "osm_id": 1340581945,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.144699,
+                "lon": 21.137137,
+                "area_m2": 169174.02,
+                "osm_id": 1340581967,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.124885,
+                "lon": 21.230688,
+                "area_m2": 16943.08,
+                "osm_id": 1340980973,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 17,
+        "bounds": {
+            "min_lat": 41.8919,
+            "min_lon": 21.4414,
+            "max_lat": 41.9369,
+            "max_lon": 21.6667
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.923139,
+                "lon": 21.469636,
+                "area_m2": 12374.08,
+                "osm_id": 234398642,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 21,
+        "bounds": {
+            "min_lat": 41.8468,
+            "min_lon": 20.9009,
+            "max_lat": 41.8919,
+            "max_lon": 21.036
+        },
+        "sites": [
+            {
+                "name": "Torino Rolet",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.874293,
+                "lon": 20.930501,
+                "area_m2": 685.89,
+                "osm_id": 1083985993,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 22,
+        "bounds": {
+            "min_lat": 41.8468,
+            "min_lon": 21.5315,
+            "max_lat": 41.8919,
+            "max_lon": 21.7568
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.866308,
+                "lon": 21.697766,
+                "area_m2": 85960.1,
+                "osm_id": 177659040,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.867875,
+                "lon": 21.708609,
+                "area_m2": 12221.76,
+                "osm_id": 415339316,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.866501,
+                "lon": 21.710998,
+                "area_m2": 37851.99,
+                "osm_id": 415339317,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 24,
+        "bounds": {
+            "min_lat": 41.7117,
+            "min_lon": 20.7658,
+            "max_lat": 41.7568,
+            "max_lon": 20.991
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.745609,
+                "lon": 20.839633,
+                "area_m2": 352279.26,
+                "osm_id": 1205845908,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.755114,
+                "lon": 20.847205,
+                "area_m2": 87542.33,
+                "osm_id": 1328632425,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 25,
+        "bounds": {
+            "min_lat": 41.7117,
+            "min_lon": 21.6667,
+            "max_lat": 41.7568,
+            "max_lon": 21.8919
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.745932,
+                "lon": 21.743744,
+                "area_m2": 95370.29,
+                "osm_id": 303485036,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "TiFi",
+                "category": "Industry",
+                "type": "yes",
+                "specifics": "Unknown",
+                "lat": 41.716724,
+                "lon": 21.784641,
+                "area_m2": 277.19,
+                "osm_id": 376565319,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "TiFi-Warehouse",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.736585,
+                "lon": 21.774899,
+                "area_m2": 685.06,
+                "osm_id": 391573739,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Дине",
+                "category": "Unknown",
+                "type": "site",
+                "specifics": "Unknown",
+                "lat": 41.747454,
+                "lon": 21.771058,
+                "area_m2": 19685.9,
+                "osm_id": 586300242,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Juca",
+                "category": "Industry",
+                "type": "industrial",
+                "specifics": "Unknown",
+                "lat": 41.725284,
+                "lon": 21.769944,
+                "area_m2": 1204.59,
+                "osm_id": 651000989,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Stobi",
+                "category": "Industry",
+                "type": "commercial",
+                "specifics": "Unknown",
+                "lat": 41.726342,
+                "lon": 21.759176,
+                "area_m2": 4269.53,
+                "osm_id": 667102184,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 26,
+        "bounds": {
+            "min_lat": 41.2162,
+            "min_lon": 22.4324,
+            "max_lat": 41.2613,
+            "max_lon": 22.6126
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.228756,
+                "lon": 22.482591,
+                "area_m2": 192286.59,
+                "osm_id": 180713899,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 27,
+        "bounds": {
+            "min_lat": 41.4414,
+            "min_lon": 22.027,
+            "max_lat": 41.4865,
+            "max_lon": 22.3423
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 41.438491,
+                "lon": 22.179409,
+                "area_m2": 153172.17,
+                "osm_id": 334644190,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    },
+    {
+        "square_id": 28,
+        "bounds": {
+            "min_lat": 42.0721,
+            "min_lon": 21.0811,
+            "max_lat": 42.1171,
+            "max_lon": 21.3063
+        },
+        "sites": [
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.114156,
+                "lon": 21.23472,
+                "area_m2": 15147.95,
+                "osm_id": 1340980974,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.087531,
+                "lon": 21.224557,
+                "area_m2": 31377.41,
+                "osm_id": 1340981067,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            },
+            {
+                "name": "Unnamed quarry",
+                "category": "Mining",
+                "type": "quarry",
+                "specifics": "Unknown",
+                "lat": 42.081258,
+                "lon": 21.22586,
+                "area_m2": 23845.13,
+                "osm_id": 1340981068,
+                "industry_label": "General Industrial",
+                "risk": "medium",
+                "pollutants": [
+                    "Unknown industrial effluents",
+                    "Suspended solids",
+                    "BOD"
+                ],
+                "satellite_signature": "No specific spectral signature. Monitor for turbidity changes and riparian NDVI decline in multitemporal analysis."
+            }
+        ]
+    }
+]
