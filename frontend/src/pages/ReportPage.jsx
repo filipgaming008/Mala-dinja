@@ -108,6 +108,65 @@ export const ReportPage = () => {
               </CardContent>
             </Card>
           </Grid>
+          <Grid item xs={12} md={6}>
+            <Card className="panel-card">
+              <CardContent>
+                <Typography variant="h6">AI Risk Drivers</Typography>
+                <Typography sx={{ mt: 1, fontWeight: 700 }}>Possible Drivers</Typography>
+                {(report.aiRiskAnalysis?.possibleDrivers ?? []).map((item) => (
+                  <Typography key={`driver-${item}`}>- {item}</Typography>
+                ))}
+                <Typography sx={{ mt: 1, fontWeight: 700 }}>Satellite Signals</Typography>
+                {(report.aiRiskAnalysis?.satelliteObservableSignals ?? []).map((item) => (
+                  <Typography key={`signal-${item}`}>- {item}</Typography>
+                ))}
+                <Typography sx={{ mt: 1, fontWeight: 700 }}>Limitations</Typography>
+                {(report.aiRiskAnalysis?.limitations ?? []).map((item) => (
+                  <Typography key={`limitation-${item}`}>- {item}</Typography>
+                ))}
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card className="panel-card">
+              <CardContent>
+                <Typography variant="h6">Source Mitigation Guidance</Typography>
+                {(report.sourceMitigation?.sourceRecommendations ?? []).length === 0 ? (
+                  <Typography sx={{ mt: 1 }} color="text.secondary">
+                    No source-specific guidance available for this report.
+                  </Typography>
+                ) : null}
+                {(report.sourceMitigation?.sourceRecommendations ?? []).map((source) => (
+                  <Card key={`${source.sourceName}-${source.sourceType}`} variant="outlined" sx={{ mt: 1.5 }}>
+                    <CardContent>
+                      <Stack direction="row" spacing={1} alignItems="center">
+                        <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+                          {source.sourceName}
+                        </Typography>
+                        <Chip label={source.sourceType} size="small" />
+                        <Chip label={source.riskLevel} size="small" color="warning" />
+                      </Stack>
+                      <Typography sx={{ mt: 1, fontWeight: 700 }}>Immediate Actions</Typography>
+                      {source.immediateActions.map((item) => (
+                        <Typography key={`${source.sourceName}-immediate-${item}`}>- {item}</Typography>
+                      ))}
+                      <Typography sx={{ mt: 1, fontWeight: 700 }}>Long-Term Mitigations</Typography>
+                      {source.longTermMitigations.map((item) => (
+                        <Typography key={`${source.sourceName}-mitigation-${item}`}>- {item}</Typography>
+                      ))}
+                      <Typography sx={{ mt: 1, fontWeight: 700 }}>Monitoring Suggestions</Typography>
+                      {source.monitoringSuggestions.map((item) => (
+                        <Typography key={`${source.sourceName}-monitoring-${item}`}>- {item}</Typography>
+                      ))}
+                      <Typography sx={{ mt: 1.5 }} color="text.secondary">
+                        {source.businessFriendlyExplanation}
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+              </CardContent>
+            </Card>
+          </Grid>
           <Grid item xs={12}>
             <Card className="panel-card">
               <CardContent>
